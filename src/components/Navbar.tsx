@@ -33,18 +33,18 @@ export function Navbar() {
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
           scrolled
             ? 'border-b border-stone-900/[0.08] bg-[#F5F3EF]/90 backdrop-blur-md'
-            : 'border-b border-transparent bg-gradient-to-b from-[#F5F3EF]/85 via-[#F5F3EF]/40 to-transparent'
+            : 'border-b border-transparent bg-transparent'
         }`}
       >
         <nav
           aria-label="Principal"
           className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-20 lg:px-8"
         >
-          <a href="#topo" className="flex flex-col leading-none" aria-label={`${SITE_CONFIG.brandName} - início`}>
-            <span className="font-display text-xl font-semibold tracking-[0.12em] text-[#191817] sm:text-2xl">
+          <a href="#topo" className={`flex flex-col leading-none transition-colors ${scrolled ? 'text-[#191817]' : 'text-[#F5F3EF]'}`} aria-label={`${SITE_CONFIG.brandName} - início`}>
+            <span className="font-display text-xl font-semibold tracking-[0.12em] sm:text-2xl">
               {SITE_CONFIG.shortName}
             </span>
-            <span className="mt-1.5 flex items-center gap-2 text-[10px] tracking-[0.25em] text-[#66625D]">
+            <span className={`mt-1.5 flex items-center gap-2 text-[10px] tracking-[0.25em] ${scrolled ? 'text-[#66625D]' : 'text-[#F5F3EF]/70'}`}>
               <span aria-hidden="true" className="h-px w-5 bg-[#96684A]" />
               {SITE_CONFIG.tagline}
             </span>
@@ -55,7 +55,7 @@ export function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="group relative py-2 text-sm font-medium text-[#191817]"
+                  className={`group relative py-2 text-sm font-medium transition-colors ${scrolled ? 'text-[#191817]' : 'text-[#F5F3EF]'}`}
                 >
                   {link.label}
                   <span className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-[#96684A] transition-transform duration-300 group-hover:scale-x-100" />
@@ -69,7 +69,7 @@ export function Navbar() {
               href={SITE_CONFIG.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden items-center gap-2 bg-[#96684A] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#7A5238] lg:inline-flex"
+              className={`hidden items-center gap-2 border px-5 py-3 text-sm font-semibold text-white transition-colors lg:inline-flex ${scrolled ? 'border-[#96684A] bg-[#96684A] hover:border-[#7A5238] hover:bg-[#7A5238]' : 'border-[#F5F3EF]/50 hover:border-[#96684A] hover:bg-[#96684A]'}`}
             >
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
               Falar no WhatsApp
@@ -80,7 +80,7 @@ export function Navbar() {
               aria-label="Abrir menu"
               aria-expanded={open}
               aria-controls="menu-mobile"
-              className="-mr-2 inline-flex h-11 w-11 items-center justify-center text-[#191817] lg:hidden"
+              className={`-mr-2 inline-flex h-11 w-11 items-center justify-center transition-colors lg:hidden ${scrolled ? 'text-[#191817]' : 'text-[#F5F3EF]'}`}
             >
               <Menu className="h-6 w-6" aria-hidden="true" />
             </button>

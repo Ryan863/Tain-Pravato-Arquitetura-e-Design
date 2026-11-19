@@ -58,11 +58,11 @@ export const HERO = {
 } as const;
 
 export const CREDIBILITY = [
-  { icon: 'star', label: '5.0 no Google (13 Avaliações)' },
-  { icon: 'landmark', label: 'CASACOR SC 2025 & Núcleo D' },
-  { icon: 'map-pin', label: 'Atuação em SC e SP' },
+  { icon: 'star', value: '5.0', label: 'Nota no Google (13 avaliações)' },
+  { icon: 'award', value: '2025', label: 'CASACOR Santa Catarina' },
+  { icon: 'trophy', value: '1º lugar', label: 'Concurso Técnico Núcleo D' },
+  { icon: 'map-pin', value: 'SC · SP', label: 'Projetos em Santa Catarina e São Paulo' },
 ] as const;
-
 export const PRESS_SECTION = {
   eyebrow: 'Autoridade premiada e publicada',
   title: 'Reconhecimento que nasce do rigor, não do ruído.',
