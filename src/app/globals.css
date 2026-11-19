@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --surface-base: #F5F3EF;
+  --surface-sand: #EAE6DF;
+  --surface-steel: #191817;
+  --ink-primary: #191817;
+  --ink-secondary: #66625D;
+  --accent-walnut: #96684A;
+  --accent-walnut-hover: #7A5238;
+}
+
+@theme inline {
+  --color-background: var(--surface-base);
+  --color-foreground: var(--ink-primary);
+  --color-sand: var(--surface-sand);
+  --color-steel: var(--surface-steel);
+  --color-concrete: var(--ink-secondary);
+  --color-walnut: var(--accent-walnut);
+  --color-walnut-hover: var(--accent-walnut-hover);
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+  background-color: var(--surface-base);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background-color: rgba(150, 104, 74, 0.25);
+  color: #191817;
+}
+
+.architectural-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.accordion-content[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.accordion-inner {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-content {
+    transition: none;
+  }
+}
